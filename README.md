@@ -1,5 +1,5 @@
 # Discord-Webhook-Notifications
-Discord Webhook Notifications
+
 
 **REMEMBER TO ENTER YOUR WEBHOOK ADDRESS AT THE BEGINNING OF THE SCRIPT**
 
