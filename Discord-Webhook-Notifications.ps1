@@ -1,3 +1,5 @@
+# source https://github.com/obeliksgall/Discord-Webhook-Notifications/tree/main
+# version 1.0
 $webhookUri = '' # Enter Discord Webhook Address between apostrophe
 
 $data = Get-Date -Format "yyyy-MM-dd HH:mm:ss" # Get current date and time
