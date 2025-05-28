@@ -1,6 +1,7 @@
 # Discord-Webhook-Notifications
 Discord Webhook Notifications
 
+**REMEMBER TO ENTER YOUR WEBHOOK ADDRESS AT THE BEGINNING OF THE SCRIPT**
 
 PowerShell script that sends a notification to the specified Discord Webhook in the form below.
 
