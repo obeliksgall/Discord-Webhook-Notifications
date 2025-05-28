@@ -7,19 +7,8 @@ PowerShell script that sends a notification to the specified Discord Webhook in 
 ![Zrzut ekranu 2025-05-28 182311](https://github.com/user-attachments/assets/92f4ed3e-3846-43b9-abf9-7d3dd4e4a710)
 
 
-Your service XYZ is up!
-Computer Name
-XYZ
-Time (Central European Standard Time)
-2025-05-28 17:34:27
-IP Address
-10.10.10.10.
-Dzis 17:33
-System Notification
-Sent from XYZ
 
-
-How to run?
+**How to run?**
 Using Windows Scheduler (Below is an example for logging into Windows):
 Steps:
 1. Open Task Scheduler Press Win + R, type taskschd.msc, and hit Enter.
@@ -44,6 +33,8 @@ Steps:
 6. Finalize and Enable Task
   - Click "OK" to save the task.
   - Test it by logging out and logging in again.
+
+
 
 Using gpedit.msc (Below is an example of how to shut down a computer)
 Steps:
