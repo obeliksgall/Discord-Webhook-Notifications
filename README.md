@@ -29,7 +29,7 @@ Steps:
   - In "Program/script", enter:
       powershell.exe
   - In "Add arguments", enter:
-      -ExecutionPolicy Bypass -File "C:\Path\To\YourScript.ps1"
+      -ExecutionPolicy Bypass -File ".\Discord-Webhook-Notifications.ps1" -Mode turnon
   - Click "OK".
 6. Finalize and Enable Task
   - Click "OK" to save the task.
@@ -47,6 +47,7 @@ Steps:
 3. Add Your PowerShell Script
   - In the Shutdown Properties window, click "Add…".
   - Click "Browse" and locate your PowerShell script (e.g., C:\Path\To\YourScript.ps1).
+  - Add param: -Mode turnoff
   - Click "OK".
 4. Ensure PowerShell Execution Policy Allows Scripts
   - If your system restricts execution, modify the policy by running:
