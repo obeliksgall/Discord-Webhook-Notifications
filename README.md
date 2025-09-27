@@ -63,6 +63,3 @@ Repeat with `turnoff` for shutdown events.
 MIT – free to use, modify, and distribute with attribution.
 
 ---
-
-```
-
