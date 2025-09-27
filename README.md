@@ -1,58 +1,68 @@
-# Discord-Webhook-Notifications
 
+---
 
-**REMEMBER TO ENTER YOUR WEBHOOK ADDRESS AT THE BEGINNING OF THE SCRIPT**
+# 💬 Discord Webhook Notifications for Power Events
 
-PowerShell script that sends a notification to the specified Discord Webhook in the form below.
+A PowerShell script that sends a Discord notification when your computer turns on or off. Perfect for monitoring servers, workstations, or remote machines.
 
-![Zrzut ekranu 2025-05-28 182311](https://github.com/user-attachments/assets/92f4ed3e-3846-43b9-abf9-7d3dd4e4a710)
+## 🚀 How to Run
 
+Use PowerShell with the required `-Mode` parameter:
 
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File ".\Discord-Webhook-Notifications.ps1" -Mode turnon
+powershell.exe -ExecutionPolicy Bypass -File ".\Discord-Webhook-Notifications.ps1" -Mode turnoff
+```
 
-**How to run?**
-Using Windows Scheduler (Below is an example for logging into Windows):
-Steps:
-1. Open Task Scheduler Press Win + R, type taskschd.msc, and hit Enter.
-2. Create a New Task In the Task Scheduler, select "Create Task" from the right-hand panel.
-3. General Tab Settings
-  - Name the task (e.g., RunPowerShellOnLogin).
-  - Select "Run only when user is logged on" (or "Run whether user is logged on or not", if needed).
-  - Check "Run with highest privileges" if the script requires admin rights.
-4. Trigger Configuration
-  - Go to the "Triggers" tab and click "New...".
-  - Set "Begin the task" to "At log on".
-  - Select "Any user" or a specific user.
-  - Click "OK".
-5. Action to Run the Script
-  - Go to the "Actions" tab and click "New...".
-  - Set "Action" to "Start a program".
-  - In "Program/script", enter:
-      powershell.exe
-  - In "Add arguments", enter:
-      -ExecutionPolicy Bypass -File ".\Discord-Webhook-Notifications.ps1" -Mode turnon
-  - Click "OK".
-6. Finalize and Enable Task
-  - Click "OK" to save the task.
-  - Test it by logging out and logging in again.
+## 🛠 Parameters
 
+| Parameter | Allowed Values       | Description                         |
+|----------|----------------------|-------------------------------------|
+| `-Mode`  | `turnon`, `turnoff`  | Specifies whether the system is starting or shutting down |
 
+## 📤 What Gets Sent
 
-Using gpedit.msc (Below is an example of how to shut down a computer)
-Steps:
-1. Open Group Policy Editor
-  - Press Win + R, type gpedit.msc, and hit Enter.
-2. Navigate to Shutdown Script Settings
-  - Go to Computer Configuration > Windows Settings > Scripts (Startup/Shutdown).
-  - Double-click Shutdown in the right pane.
-3. Add Your PowerShell Script
-  - In the Shutdown Properties window, click "Add…".
-  - Click "Browse" and locate your PowerShell script (e.g., C:\Path\To\YourScript.ps1).
-  - Add param: -Mode turnoff
-  - Click "OK".
-4. Ensure PowerShell Execution Policy Allows Scripts
-  - If your system restricts execution, modify the policy by running:
-      Set-ExecutionPolicy Bypass -Scope LocalMachine
-  - You can also add powershell.exe -ExecutionPolicy Bypass -File "C:\Path\To\YourScript.ps1" as a command instead.
-5. Apply and Test
-  - Click "OK" to save the settings.
-  - Restart your computer and check if the script runs when shutting down.
+The Discord message includes:
+
+- 🖥 **Computer Name**
+- 🕒 **Timestamp** (with local timezone)
+- 🌐 **IP Address**
+- 🎨 **Color-coded status**: green for `turnon`, red for `turnoff`
+- 📎 **Footer** with time and hostname
+
+## 🔧 Configuration
+
+Replace the placeholder webhook URL in the script with your actual Discord webhook:
+
+```powershell
+$webhookUri = 'https://discord.com/api/webhooks/...' # <- Insert your webhook URL here
+```
+
+## 🧪 Example Use Case
+
+To send a notification automatically when the system boots:
+
+1. Open Task Scheduler.
+2. Create a new task with trigger: **At startup**.
+3. Set the action to run PowerShell with arguments:
+
+```text
+-ExecutionPolicy Bypass -File "C:\Path\To\Discord-Webhook-Notifications.ps1" -Mode turnon
+```
+
+Repeat with `turnoff` for shutdown events.
+
+## 📋 Requirements
+
+- PowerShell 5.1 or later
+- Internet access
+- Active Discord webhook
+
+## 📘 License
+
+MIT – free to use, modify, and distribute with attribution.
+
+---
+
+```
+
