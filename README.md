@@ -58,8 +58,8 @@ Repeat with `turnoff` for shutdown events.
 - Internet access
 - Active Discord webhook
 
-## 📘 License
+## 📄 License
 
-MIT – free to use, modify, and distribute with attribution.
+This script is provided as-is, without warranty. Feel free to modify and adapt it to your needs.
 
 ---
